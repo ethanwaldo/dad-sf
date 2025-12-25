@@ -40,75 +40,31 @@
         }
 
         .container {
-            max-width: 700px;
+            max-width: 600px;
             position: relative;
             z-index: 10;
+            text-align: center;
         }
 
-        .letter {
+        .card {
             background: #fffef7;
             border-radius: 10px;
-            padding: 50px 40px;
+            padding: 60px 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             position: relative;
             border: 1px solid #d4af37;
         }
 
-        .wax-seal {
-            position: absolute;
-            top: -25px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #c41e3a;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-        }
-
-        .santa-sig {
-            text-align: right;
-            color: #c41e3a;
-            font-size: 1.1em;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
         .greeting {
             color: #1a472a;
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            font-family: 'Brush Script MT', cursive;
-        }
-
-        .letter-text {
-            color: #2c2c2c;
-            font-size: 1.15em;
-            line-height: 1.9;
-            margin-bottom: 25px;
-        }
-
-        .destination-reveal {
-            text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.3);
-        }
-
-        .destination-reveal h2 {
-            color: white;
-            font-size: 2.8em;
-            margin: 15px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2em;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
         }
 
         .plane {
-            font-size: 2.5em;
+            font-size: 3.5em;
+            margin: 30px 0;
             animation: fly 3s ease-in-out infinite;
         }
 
@@ -117,64 +73,47 @@
             50% { transform: translateX(10px) translateY(-5px); }
         }
 
-        .closing {
-            margin-top: 30px;
-            color: #2c2c2c;
-            font-size: 1.15em;
-            line-height: 1.8;
+        .destination {
+            color: #c41e3a;
+            font-size: 3em;
+            font-weight: bold;
+            margin: 30px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .ps {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 2px solid #e8e8e8;
-            color: #555;
-            font-size: 1em;
+        .subtitle {
+            color: #2c2c2c;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+
+        .signature {
+            color: #1a472a;
+            font-size: 1.5em;
+            margin-top: 50px;
             font-style: italic;
         }
 
         @media (max-width: 600px) {
-            .letter { padding: 35px 25px; }
-            .greeting { font-size: 1.5em; }
-            .letter-text { font-size: 1.05em; }
-            .destination-reveal h2 { font-size: 2em; }
+            .card { padding: 45px 25px; }
+            .greeting { font-size: 1.6em; }
+            .destination { font-size: 2.2em; }
+            .plane { font-size: 2.8em; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="letter">
-            <div class="wax-seal">🎅</div>
-            
+        <div class="card">
             <p class="greeting">Dear Dad,</p>
             
-            <p class="letter-text">
-                You've been on my "nice list" for quite some time now, and I've been watching how hard you work and how much you give to everyone around you.
-            </p>
+            <div class="plane">✈️</div>
             
-            <p class="letter-text">
-                This year, I wanted to do something special. I got word from the elves that there's a beautiful city you should see, with rolling hills, historic cable cars, and a bridge painted in international orange that stretches across the bay.
-            </p>
-
-            <div class="destination-reveal">
-                <div class="plane">✈️</div>
-                <h2>San Francisco</h2>
-                <p style="color: white; font-size: 1.2em; margin-top: 10px;">A round-trip flight, just for you</p>
-            </div>
-
-            <p class="letter-text">
-                The Golden Gate Bridge waiting in the fog. The clang of cable cars climbing steep streets. Fresh sourdough bread and the smell of the ocean. All of it is calling your name.
-            </p>
-
-            <p class="closing">
-                We'll pick the dates together whenever you're ready. This adventure is yours to take when the time feels right.
-            </p>
-
-            <p class="ps">
-                P.S. — The North Pole sends its warmest wishes. Have an incredible journey. 🎄
-            </p>
-
-            <p class="santa-sig">— Santa</p>
+            <h1 class="destination">San Francisco</h1>
+            
+            <p class="subtitle">A round-trip flight, just for you</p>
+            
+            <p class="signature">— Me</p>
         </div>
     </div>
 
