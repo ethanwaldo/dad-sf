@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message for You 🎄</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5016 50%, #8b0000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .container {
+            max-width: 700px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .letter {
+            background: #fffef7;
+            border-radius: 10px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            border: 1px solid #d4af37;
+        }
+
+        .wax-seal {
+            position: absolute;
+            top: -25px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #c41e3a;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+
+        .santa-sig {
+            text-align: right;
+            color: #c41e3a;
+            font-size: 1.1em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .greeting {
+            color: #1a472a;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .letter-text {
+            color: #2c2c2c;
+            font-size: 1.15em;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .destination-reveal {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.3);
+        }
+
+        .destination-reveal h2 {
+            color: white;
+            font-size: 2.8em;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .plane {
+            font-size: 2.5em;
+            animation: fly 3s ease-in-out infinite;
+        }
+
+        @keyframes fly {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(10px) translateY(-5px); }
+        }
+
+        .closing {
+            margin-top: 30px;
+            color: #2c2c2c;
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        .ps {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #e8e8e8;
+            color: #555;
+            font-size: 1em;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .letter { padding: 35px 25px; }
+            .greeting { font-size: 1.5em; }
+            .letter-text { font-size: 1.05em; }
+            .destination-reveal h2 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="letter">
+            <div class="wax-seal">🎅</div>
+            
+            <p class="greeting">Dear Dad,</p>
+            
+            <p class="letter-text">
+                You've been on my "nice list" for quite some time now, and I've been watching how hard you work and how much you give to everyone around you.
+            </p>
+            
+            <p class="letter-text">
+                This year, I wanted to do something special. I got word from the elves that there's a beautiful city you should see, with rolling hills, historic cable cars, and a bridge painted in international orange that stretches across the bay.
+            </p>
+
+            <div class="destination-reveal">
+                <div class="plane">✈️</div>
+                <h2>San Francisco</h2>
+                <p style="color: white; font-size: 1.2em; margin-top: 10px;">A round-trip flight, just for you</p>
+            </div>
+
+            <p class="letter-text">
+                The Golden Gate Bridge waiting in the fog. The clang of cable cars climbing steep streets. Fresh sourdough bread and the smell of the ocean. All of it is calling your name.
+            </p>
+
+            <p class="closing">
+                We'll pick the dates together whenever you're ready. This adventure is yours to take when the time feels right.
+            </p>
+
+            <p class="ps">
+                P.S. — The North Pole sends its warmest wishes. Have an incredible journey. 🎄
+            </p>
+
+            <p class="santa-sig">— Santa</p>
+        </div>
+    </div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 8000);
+        }
+
+        setInterval(createSnowflake, 200);
+    </script>
+</body>
+</html>
